@@ -1,0 +1,40 @@
+package weekone;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FacebookSignup {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com");
+		
+		driver.findElementByLinkText("Create New Account").click();
+		
+		Thread.sleep(5000);
+		
+		driver.findElementByName("firstname").sendKeys("Shagu");
+		
+		driver.findElementByName("lastname").sendKeys("s");
+		
+		driver.findElementByName("reg_email__").sendKeys("shagu2319@gmail.com");		
+		
+	    driver.findElementByName("reg_email_confirmation__").sendKeys("shagu2319@gmail.com");
+	    
+		driver.findElementById("password_step_input").sendKeys("stormshadow");
+		
+		//driver.findElementByName("sex").click();
+		
+		//driver.findElementByXPath("//*[@id=\"u_2_3_Ze\"]").click();
+		
+		
+	}
+
+}
